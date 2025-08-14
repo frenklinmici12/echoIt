@@ -31,9 +31,6 @@ echoIt: echoIt.go
 run:
 	(cd client; sudo ethosRun -t; ethosLog .)
 
-# Bad practice, don't write targets like this
-rebuild: clean all install
-
 clean:
 	sudo rm -rf client ethos
 	rm -f echoIt
@@ -41,9 +38,7 @@ clean:
 	
 
 reset:
-	sudo rm -rf client ethos
-	rm -f echoIt
-	rm -f echoIt.goo.ethos
+	make clean
 
 	git pull
 
