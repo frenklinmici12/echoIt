@@ -4,12 +4,14 @@
 package main
 
 import (
-	"ethos/altEthos"
-	"ethos/fmt" // for outputting
-	"ethos/kernelTypes"
-	"ethos/syscall"
+	// refer to http://godoc.ethos-os.org/ for detailed docs! (need to be on UIC wifi or VPN)
 
-	"log"
+	"ethos/altEthos" // various ethos functions
+	"ethos/fmt" // for outputting
+	"ethos/kernelTypes" // supported ethos types
+	"ethos/syscall" // for status
+
+	"log" 
 )
 
 func main() {
