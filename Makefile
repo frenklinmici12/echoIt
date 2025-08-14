@@ -39,13 +39,9 @@ clean:
 	rm -f echoIt
 	rm -f echoIt.goo.ethos
 
-# run ethos indefinitely
-run:
-	(cd client; sudo -E ethosRun)
 
-# access ethos CLI
-etAl:
-	(cd client; etAl client.ethos)
+
+
 	
 # this and sync not needed, just for speeding up development
 reset:

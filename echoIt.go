@@ -1,5 +1,5 @@
 // Author: Frenklin Mici 08/13/25
-// Purpose: Demo for taking input and outputting text from stdin and stdout
+// Purpose: demo - reading and writing with stdin and stdout
 
 package main
 
@@ -11,7 +11,7 @@ import (
 	"ethos/kernelTypes" // supported ethos types
 	"ethos/syscall" // for status
 
-	"log" 
+	"log" // Golang's log package
 )
 
 func main() {
@@ -27,6 +27,6 @@ func main() {
 		altEthos.Exit(status)
 	}
 
-	//echo the input back to the user
+	// echo the input back to the user
 	fmt.Println("You entered:", input)
 }
