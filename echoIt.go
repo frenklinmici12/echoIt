@@ -4,12 +4,22 @@
 package main
 
 import (
+	"ethos/altEthos"
 	"ethos/fmt" // for outputting
-	"ethos/altEthos" 
-	
+	"ethos/kernelTypes"
+	"ethos/syscall"
+	"fmt"
 	"log"
 )
 
 func main() {
-	
+	var input kernelTypes.String // will store input in here.
+
+	status := altEthos.ReadStream(syscall.Stdin, &input)
+	if status != syscall.StatusOk {
+		log.Println("Error reading from stdin. Exiting.")
+		altEthos.Exit(status)
+	}
+
+	fmt.Println("You entered: ", input)
 }

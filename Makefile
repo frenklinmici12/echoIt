@@ -18,18 +18,17 @@ export ROOTFS=`pwd`/client/rootfs
 .PHONY: all install clean
 all: echoIt
 
+# set up our program in the ethos vm 
 install:
 	(ethosParams client && cd client && ethosMinimaltdBuilder)
-	install echoIt client/rootfs/programs
-	ethosStringEncode /programs/echoIt  > client/rootfs/etc/init/console
+	install echoIt $(ETHOSROOT)/programs
+	ethosStringEncode /programs/echoIt  > $(ETHOSROOT)/etc/init/console
 
+# compile echoIt.go
 echoIt: echoIt.go
 	mkdir ethos
 	cp -pr /usr/lib64/go/pkg/ethos_$(GOARCH)/* ethos
 	ethosGo echoIt.go
-
-run:
-	(cd client; sudo ethosRun -t; ethosLog .)
 
 clean:
 	sudo rm -rf client ethos
