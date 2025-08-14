@@ -8,7 +8,7 @@ import (
 	"ethos/fmt" // for outputting
 	"ethos/kernelTypes"
 	"ethos/syscall"
-	"fmt"
+
 	"log"
 )
 
