@@ -1,1 +1,2 @@
-# echoIt
+How to run:
+
