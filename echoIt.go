@@ -15,7 +15,9 @@ import (
 func main() {
 	var input kernelTypes.String // will store input in here.
 
-	status := altEthos.ReadStream(syscall.Stdin, &input) // Read from stdin (0), put that into the variable 'input' ReadStream returns status.
+	fmt.Print("Enter input: ") // write to stdout
+
+	status := altEthos.ReadStream(syscall.Stdin, &input) // Read from stdin (0), put that into the variable 'input' ReadStream returns a syscall status.
 	
 	// if something goes wrong (not StatusOk), exit
 	if status != syscall.StatusOk {
@@ -24,5 +26,5 @@ func main() {
 	}
 
 	//echo the input back to the user
-	fmt.Println("You entered: ", input)
+	fmt.Println("You entered:", input)
 }
